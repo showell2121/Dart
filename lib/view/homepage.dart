@@ -23,7 +23,6 @@ class HomePage extends StatelessWidget{
           //gets image from internet
           Expanded(child:Image.network('https://i.picsum.photos/id/1057/6016/4016.jpg')),
 
-
           ],),
           
           //creates error becuase data exceeds screen.          
@@ -40,7 +39,27 @@ class HomePage extends StatelessWidget{
           // Expanded(child: Text('1Home page!!',style: TextStyle(fontSize: 100),)),
           // Expanded(child: Text('1Home page!!',style: TextStyle(fontSize: 100),)),
           // Expanded(child: Text('1Home page!!',style: TextStyle(fontSize: 100),)),
-          ],
+
+          //buttons
+          FlatButton(
+            child: Text("Flat Button"),
+            onPressed: null, 
+            ),
+          
+          //Icon button with default icon from flutter
+          IconButton(
+           icon: Icon(Icons.ac_unit),
+           onPressed: null,
+            ),
+          //Raised
+          RaisedButton(
+            child: Text('Raised Button'),
+            onPressed: null,
+          )
+          
+          
+          
+          ],//End of Screen
         ) 
     );
   }
