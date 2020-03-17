@@ -7,6 +7,9 @@ class HomePage extends StatelessWidget {
   //creates controller variable
   HomePageController controller;
 
+  //create context variable so it can be accessed by controller
+  BuildContext context;
+
   //constructor
   HomePage(){
 
@@ -17,6 +20,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    //intializes value context to parameter
+    this.context = context;
+    
     return Scaffold(
         appBar: AppBar(
           title: Text('Lesson1 Home'),
