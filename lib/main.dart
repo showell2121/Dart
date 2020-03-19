@@ -18,7 +18,7 @@ class Lesson1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Lesson1',      
-      home: HomePage(),//Text('Seth Demo Home Page'), //scaffold() allows to structure page
+      home: HomePage(), //Text('Seth Demo Home Page'), //scaffold() allows to structure page
     );
   }
 } //end of Lesson1 Class

@@ -3,7 +3,6 @@ import 'package:lesson0/controller/homepage_controller.dart';
 
 //class
 class HomePage extends StatelessWidget {
-
   //creates controller variable
   HomePageController controller;
 
@@ -11,25 +10,59 @@ class HomePage extends StatelessWidget {
   BuildContext context;
 
   //constructor
-  HomePage(){
-
+  HomePage() {
     //pass homepage to controller
     controller = HomePageController(this);
   }
 
-
   @override
   Widget build(BuildContext context) {
-
     //intializes value context to parameter
     this.context = context;
-    
+
     return Scaffold(
+        //Item 1
         appBar: AppBar(
           title: Text('Lesson1 Home'),
         ),
+        //Item 2
+        //hameburger menu
+        drawer: Drawer(
+          child: ListView(
+            children: <Widget>[
+              // //menu title/header
+              // DrawerHeader(
+              //   child: Text('Choose a menu'),
+              // ),
+              //Replaced DrawHeader
+              //Differnt type of header
+              UserAccountsDrawerHeader(
+                accountName: Text("Seth Howell"), 
+                accountEmail: Text("showelljf@gmail.com"),
+                currentAccountPicture: Image.asset("assets/images/Gus.jpg"),
+              ), 
+              //buttons
+              RaisedButton(
+                child: Text("Raised Button"),
+                //taken care of by controller
+                onPressed: () {},
+              ),
+              FlatButton(
+                child: Text("Flat Button"),
+                //taken care of by controller
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Text("Icon Button"),
+                //taken care of by controller
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
         //body: Column(
         //creates scrollable window
+        //Item 3
         body: ListView(
           children: <Widget>[
             //allows you to add multiple things to a rwo
