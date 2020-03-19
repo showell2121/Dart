@@ -21,10 +21,12 @@ class HomePage extends StatelessWidget {
     this.context = context;
 
     return Scaffold(
+
         //Item 1
         appBar: AppBar(
           title: Text('Lesson1 Home'),
         ),
+
         //Item 2
         //hameburger menu
         drawer: Drawer(
@@ -39,13 +41,14 @@ class HomePage extends StatelessWidget {
               UserAccountsDrawerHeader(
                 accountName: Text("Seth Howell"), 
                 accountEmail: Text("showelljf@gmail.com"),
+                //images have to be manually added int pubspec.yaml
                 currentAccountPicture: Image.asset("assets/images/Gus.jpg"),
               ), 
               //buttons
               RaisedButton(
                 child: Text("Raised Button"),
                 //taken care of by controller
-                onPressed: () {},
+                onPressed: controller.csButton,
               ),
               FlatButton(
                 child: Text("Flat Button"),
@@ -60,6 +63,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+
         //body: Column(
         //creates scrollable window
         //Item 3

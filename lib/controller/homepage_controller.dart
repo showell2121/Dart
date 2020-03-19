@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+//pages
 import 'package:lesson0/view/homepage.dart';
+import '../view/cspage.dart';
+
 
 class HomePageController {
 
@@ -82,5 +85,16 @@ class HomePageController {
     print("Raised Button Pressed");
   }
   
+//homepage.dart menu header calls this function
+  void  csButton () async{
+    await Navigator.push(homepage.context, MaterialPageRoute(
+      //function that contructs target page
+      builder: (BuildContext context){return CSPage();},
+    ));
+    //removes menu tab from being opne and just displays the pack. 
+    //push everything on stack, when it returns from page, it pops
+    //menu from navigator so then ti goes to what were looking at before teh menu bar.
+    Navigator.pop(homepage.context);
+  }//end of csButton
 
 }
