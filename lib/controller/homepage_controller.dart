@@ -87,9 +87,11 @@ class HomePageController {
   
 //homepage.dart menu header calls this function
   void  csButton () async{
+
+    var data = <String, int>{"undergrad": 450, "graduate": 31};
     await Navigator.push(homepage.context, MaterialPageRoute(
       //function that contructs target page
-      builder: (BuildContext context){return CSPage();},
+      builder: (BuildContext context){return CSPage(data);},
     ));
     //removes menu tab from being opne and just displays the pack. 
     //push everything on stack, when it returns from page, it pops
