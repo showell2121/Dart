@@ -49,46 +49,58 @@ class HomePageState extends State<HomePage> {
         actions: <Widget>[
           //one
           Icon(Icons.ac_unit),
+          
           //Two
           IconButton(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.account_balance),
             onPressed: () {},
           ),
+
           //Three
           //generic
           // PopupMenuButton(
           //represent strings
           PopupMenuButton<String>(
+
+            //Version 1
             //gets selected button/popupmenuitem
-            onSelected: (value){
-                  //prints value of selected menu button
-                  print("Menu: " + value);
-                },
-            itemBuilder: (BuildContext context) {
-              //Give menu Items in list
-              return <PopupMenuEntry<String>>[                
+            // onSelected: (value){
+            //       //prints value of selected menu button
+            //       print("Menu: " + value);
+            //     },
+            //calling from cotroller not appbar
+            
+            // itemBuilder: (BuildContext context) {
+            //   //Give menu Items in list
+            //   return <PopupMenuEntry<String>>[                
 
-                PopupMenuItem(
-                  value: "one",
-                  //how we want to display
-                  child: Text("ONE"),
-                ),
-
-
-                PopupMenuItem(
-                  value: "two",                 
-                  //how we want to display
-                  child: Icon(Icons.filter_2),
-                ),
+            //     PopupMenuItem(
+            //       value: "one",
+            //       //how we want to display
+            //       child: Text("ONE"),
+            //     ),
 
 
-                PopupMenuItem(
-                  value: "three",
-                  //how we want to display
-                  child: Text("THREE"),
-                ),
-              ];
-            },
+            //     PopupMenuItem(
+            //       value: 'two',                 
+            //       //how we want to display
+            //       child: Icon(Icons.filter_2),
+            //     ),
+
+
+            //     PopupMenuItem(
+            //       value: "three",
+            //       //how we want to display
+            //       child: Text("THREE"),
+            //     ),
+            //   ];
+            // },
+
+          //New, version 2, calling from controller
+          //functions for menu are stored in controller
+          onSelected: controller.popupMenuSelected,
+          itemBuilder: controller.showPopupMenu,
+
           ),
         ],
       ),
